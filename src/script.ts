@@ -57,6 +57,11 @@ async function submitContactForm(event: Event): Promise<void> {
         isValid = false;
     }
 
+    if (phone && phone.length !== 10) {
+        phoneInput.style.border = '1px solid red';
+        isValid = false;
+    }
+
     if (!isValid) {
         return;
     }
